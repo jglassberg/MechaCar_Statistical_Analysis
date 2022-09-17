@@ -20,5 +20,12 @@ lot_summary <- Suspension_Coil %>% group_by(Manufacturing_Lot) %>%
             median_PSI = median(PSI, na.rm = T),
             variance_PSI = var(PSI, na.rm = T))
 
+t.test(Suspension_Coil$PSI,mu=1500)
 
+lot1 <- subset(Suspension_Coil, Manufacturing_Lot=="Lot1")
+lot2 <- subset(Suspension_Coil, Manufacturing_Lot=="Lot2")
+lot3 <- subset(Suspension_Coil, Manufacturing_Lot=="Lot3")
 
+t.test(lot1$PSI,mu=1500)
+t.test(lot2$PSI,mu=1500)
+t.test(lot3$PSI,mu=1500)
